@@ -3,6 +3,7 @@
 import HeroBanner from "../components/Layout/HomePage/HeroBanner";
 import Body from "../components/Layout/HomePage/Body";
 import Stats from "../components/Layout/HomePage/Stats";
+import Random from "../components/Layout/HomePage/Random";
 
 const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ const HomePage = () => {
       <HeroBanner />
       <Body />
       <Stats />
+      <Random />
     </div>
   );
 };
