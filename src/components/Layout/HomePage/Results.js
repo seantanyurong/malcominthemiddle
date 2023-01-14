@@ -12,9 +12,11 @@ const Results = (props) => {
             <h2 className="card-title">{props.data[1]}</h2>
             <p>{props.data[2]}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary mt-5">
-                Looks kewl. I wanna learn more.
-              </button>
+              <a href={props.data[3]} target="_blank" rel="noreferrer">
+                <button className="btn btn-primary mt-5">
+                  Looks kewl. I wanna learn more.
+                </button>
+              </a>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 // import fetch from 'node-fetch';
-import axios from "axios";
 import * as yup from "yup";
 import Stats from "./Stats";
 import Results from "./Results";
@@ -8,9 +7,11 @@ import { useState } from "react";
 
 const Body = () => {
   const [data, setData] = useState(null);
+  const [load, setLoad] = useState(false);
 
   async function getResults(postal1value, postal2value) {
     console.log("Getting results");
+    setLoad(true);
 
     const body = { postal1: postal1value, postal2: postal2value };
 
@@ -23,6 +24,7 @@ const Body = () => {
     );
 
     const newData = await response.json();
+    setLoad(false);
 
     console.log(newData);
     setData(newData);
@@ -72,21 +74,26 @@ const Body = () => {
 
             <div className="flex flex-col space-y-6 items-center">
               <progress className="progress w-24"></progress>
-              <button className="btn gap-2" type="submit">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                  />
-                </svg>
+              <button
+                className={`btn gap-2 ${load && "loading"}`}
+                type="submit"
+              >
+                {!load && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                    />
+                  </svg>
+                )}
                 Search
               </button>
             </div>
