@@ -1,32 +1,31 @@
+// import fetch from 'node-fetch';
+import axios from "axios";
 import * as yup from "yup";
+import Stats from "./Stats";
+import Results from "./Results";
 import { Field, Formik, Form } from "formik";
-// import { useState } from "react";
+import { useState } from "react";
 
 const Body = () => {
-  // const [postal1, setPostal1] = useState("");
-  // const [postal2, setPostal2] = useState("");
+  const [data, setData] = useState({});
 
   async function getResults(postal1value, postal2value) {
     console.log("Getting results");
 
     const body = { postal1: postal1value, postal2: postal2value };
 
-    const response = await fetch('https://zheoqm6dkz6tkuc4km4a4vj3om0sgrog.lambda-url.us-east-1.on.aws/', {
-      method: 'post',
-      body: JSON.stringify(body),
-    });
+    const response = await fetch(
+      "https://zheoqm6dkz6tkuc4km4a4vj3om0sgrog.lambda-url.us-east-1.on.aws/",
+      {
+        method: "post",
+        body: JSON.stringify(body),
+      }
+    );
 
-    const data = await response.json();
-    
-    console.log(data)
-    // axios
-    //   .post(
-    //     `https://zheoqm6dkz6tkuc4km4a4vj3om0sgrog.lambda-url.us-east-1.on.aws/`,
-    //     body
-    //   )
-    //   .then((res) => {
-    //     console.log(res.data);
-    //   });
+    const newData = await response.json();
+
+    console.log(data);
+    setData(newData);
   }
 
   const validationSchema = yup.object({
@@ -35,7 +34,7 @@ const Body = () => {
   });
 
   return (
-    <div className="flex flex justify-center items-center mx-auto space-x-10">
+    <div>
       <Formik
         initialValues={{
           postal1: "",
@@ -115,9 +114,8 @@ const Body = () => {
           </Form>
         )}
       </Formik>
-      {/* First box */}
-
-      {/* Second box */}
+      <Stats />
+      <Results data={data} />
     </div>
   );
 };
