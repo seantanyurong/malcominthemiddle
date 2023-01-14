@@ -1,6 +1,3 @@
-// import fetch from 'node-fetch';
-import axios from 'axios';
-
 const Body = () => {
 
   async function getResults() {
@@ -9,24 +6,16 @@ const Body = () => {
     const postal1 = 689672;
     const postal2 = 750472;
 
-    const body = {postal1: postal1, postal2: postal2};
+    const body = { postal1: postal1, postal2: postal2 };
 
-    // const response = await fetch('https://jmomnc7recyivbvpkxqnjkzmk40zmura.lambda-url.us-east-1.on.aws/', {
-    //   method: 'post',
-    //   body: JSON.stringify(body),
-    // });
-
-    const response = await axios({
-        method: 'post',
-        url: 'https://jmomnc7recyivbvpkxqnjkzmk40zmura.lambda-url.us-east-1.on.aws/',
-        data: JSON.stringify(body),
+    const response = await fetch('https://y5t3p22urolkrng7hsctxxd4ki0ppuaq.lambda-url.us-east-1.on.aws/', {
+      method: 'post',
+      body: JSON.stringify(body),
     });
 
     const data = await response.json();
     
     console.log(data)
-
-
   }
 
   return (
