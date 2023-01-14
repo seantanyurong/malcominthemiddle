@@ -23,6 +23,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
         </Routes>
       </main>
+      <a href="https://eelslap.com/" target="_blank" rel="noreferrer">
+        <p className="text-gray-300 fixed bottom-4 right-4">snow is cool.</p>
+      </a>
     </Fragment>
   );
 }
