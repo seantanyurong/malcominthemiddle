@@ -14,7 +14,7 @@ const Results = (props) => {
             <div className="card-actions justify-end">
               <a href={props.data[3]} target="_blank" rel="noreferrer">
                 <button className="btn btn-primary mt-5">
-                  Looks kewl. I wanna learn more.
+                  Let's meet in the middle
                 </button>
               </a>
             </div>
