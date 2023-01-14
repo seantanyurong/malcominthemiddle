@@ -17,22 +17,22 @@ const Body = () => {
 
     const body = { postal1: postal1, postal2: postal2 };
 
-    // const response = await fetch('https://y5t3p22urolkrng7hsctxxd4ki0ppuaq.lambda-url.us-east-1.on.aws/', {
-    //   method: 'post',
-    //   body: JSON.stringify(body),
-    // });
+    const response = await fetch('https://zheoqm6dkz6tkuc4km4a4vj3om0sgrog.lambda-url.us-east-1.on.aws/', {
+      method: 'post',
+      body: JSON.stringify(body),
+    });
 
-    // const data = await response.json();
+    const data = await response.json();
     
-    // console.log(data)
-    axios
-      .post(
-        `https://y5t3p22urolkrng7hsctxxd4ki0ppuaq.lambda-url.us-east-1.on.aws/`,
-        body
-      )
-      .then((res) => {
-        console.log(res.data);
-      });
+    console.log(data)
+    // axios
+    //   .post(
+    //     `https://zheoqm6dkz6tkuc4km4a4vj3om0sgrog.lambda-url.us-east-1.on.aws/`,
+    //     body
+    //   )
+    //   .then((res) => {
+    //     console.log(res.data);
+    //   });
   }
 
   const validationSchema = yup.object({
