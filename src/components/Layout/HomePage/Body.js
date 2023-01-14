@@ -2,25 +2,24 @@
 
 const Body = () => {
 
-  async function getResults() {
+  // async function getResults() {
 
-    const postal1 = 689672;
-    const postal2 = 750472;
+  //   const postal1 = 689672;
+  //   const postal2 = 750472;
 
-    const body = {postal1: postal1, postal2: postal2};
+  //   const body = {postal1: postal1, postal2: postal2};
 
-    const response = await fetch('https://jmomnc7recyivbvpkxqnjkzmk40zmura.lambda-url.us-east-1.on.aws/', {
-      method: 'post',
-      body: JSON.stringify(body),
-    });
+  //   const response = await fetch('https://jmomnc7recyivbvpkxqnjkzmk40zmura.lambda-url.us-east-1.on.aws/', {
+  //     method: 'post',
+  //     body: JSON.stringify(body),
+  //   });
 
-
-    const data = await response.json();
+  //   const data = await response.json();
     
-    console.log(data)
+  //   console.log(data)
 
 
-  }
+  // }
 
 // cd ./package/tmp && zip -r ../lamdba.zip .
 
@@ -52,7 +51,7 @@ const Body = () => {
       </div>
       <div className="flex flex-col space-y-6 items-center">
         <progress className="progress w-24"></progress>
-        <button className="btn gap-2" onClick={getResults}>
+        <button className="btn gap-2" >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
