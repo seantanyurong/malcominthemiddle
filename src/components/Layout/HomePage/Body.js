@@ -7,7 +7,7 @@ import { Field, Formik, Form } from "formik";
 import { useState } from "react";
 
 const Body = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
 
   async function getResults(postal1value, postal2value) {
     console.log("Getting results");
@@ -24,7 +24,7 @@ const Body = () => {
 
     const newData = await response.json();
 
-    console.log(data);
+    console.log(newData);
     setData(newData);
   }
 

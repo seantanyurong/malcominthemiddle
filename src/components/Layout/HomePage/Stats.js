@@ -1,6 +1,6 @@
 const Stats = () => {
   return (
-    <div className="flex flex-col items-center mx-auto mt-10">
+    <div className="flex flex-col items-center mx-auto my-10">
       <div className="stats shadow">
         <div className="stat">
           <div className="stat-figure text-secondary">

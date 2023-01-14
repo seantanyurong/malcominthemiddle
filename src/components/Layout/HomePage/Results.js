@@ -4,18 +4,21 @@ const Results = (props) => {
   return (
     <div className="flex flex-col items-center">
       <div className="divider w-3/4 mx-auto mb-20">
-        Go search for something!
+        {props.data ? "Here's your result!" : "Go search for something!"}
       </div>
-      <div className="card w-3/4 bg-neutral text-neutral-content">
-        <div className="card-body items-center text-center">
-          <h2 className="card-title">Cookies!</h2>
-          <p>We are using cookies for no reason.</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Accept</button>
-            <button className="btn btn-ghost">Deny</button>
+      {props.data && (
+        <div className="card w-3/4 bg-neutral text-neutral-content">
+          <div className="card-body items-center text-center">
+            <h2 className="card-title">{props.data[1]}</h2>
+            <p>{props.data[2]}</p>
+            <div className="card-actions justify-end">
+              <button className="btn btn-primary mt-5">
+                Looks kewl. I wanna learn more.
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
