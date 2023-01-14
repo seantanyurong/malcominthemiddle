@@ -2,10 +2,10 @@ const HeroBanner = () => {
   return (
     <div className="text-center mt-12 md:pb-8">
       <h1
-        className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
+        className="text-5xl md:text-6xl font-extrabold leading-tighter mb-4"
         data-aos="zoom-y-out"
       >
-        Malcom in the{" "}
+        Malcolm in the{" "}
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#F87272] to-[#EF9FBC]">
           middle
         </span>
