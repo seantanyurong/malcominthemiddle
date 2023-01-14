@@ -1,22 +1,43 @@
 const Body = () => {
   return (
-    <div className="flex flex-col items-center mx-auto">
-      <h1 className="text-2xl">Woah</h1>
-      <p className="text-xl">Why arent you working</p>
+    <div className="flex flex justify-center items-center mx-auto space-x-10">
+      {/* First box */}
       <div className="card w-96 bg-base-100 shadow-xl">
-        <figure>
-          <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
-        </figure>
         <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
+          <h2 className="card-title">
+            This one's made especially for you, because you're special
+          </h2>
+          <p>Type in your zip code below!</p>
+          <input
+            type="number"
+            placeholder="Numbers only please"
+            className="input input-bordered w-full max-w-xs"
+          />
+
+          {/* <div className="card-actions justify-end">
             <button className="btn btn-primary">Buy Now</button>
-          </div>
+          </div> */}
         </div>
       </div>
-      <button class="btn btn-primary">Button</button>
-      <button class="btn w-64 rounded-full">Button</button>
+      <progress className="progress w-24"></progress>
+      {/* Second box */}
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="card-title">
+            And this one's for your friend or soon-to-be friend
+          </h2>
+          <p>Type in your friend's zip code below!</p>
+          <input
+            type="number"
+            placeholder="You know the drill"
+            className="input input-bordered w-full max-w-xs"
+          />
+
+          {/* <div className="card-actions justify-end">
+            <button className="btn btn-primary">Buy Now</button>
+          </div> */}
+        </div>
+      </div>
     </div>
   );
 };

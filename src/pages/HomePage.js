@@ -1,14 +1,16 @@
 import { Fragment } from "react";
 
+import HeroBanner from "../components/Layout/HomePage/HeroBanner";
 import Body from "../components/Layout/HomePage/Body";
-import Test from "../components/Layout/HomePage/Test";
+import Stats from "../components/Layout/HomePage/Stats";
 
 const HomePage = () => {
   return (
-    <Fragment>
+    <div>
+      <HeroBanner />
       <Body />
-      <Test />
-    </Fragment>
+      <Stats />
+    </div>
   );
 };
 
