@@ -1,6 +1,3 @@
-
-// import fetch from 'node-fetch';
-import axios from "axios";
 import * as yup from "yup";
 import { Field, Formik, Form } from "formik";
 // import { useState } from "react";
@@ -12,10 +9,7 @@ const Body = () => {
   async function getResults(postal1value, postal2value) {
     console.log("Getting results");
 
-    const postal1 = 689672;
-    const postal2 = 750472;
-
-    const body = { postal1: postal1, postal2: postal2 };
+    const body = { postal1: postal1value, postal2: postal2value };
 
     const response = await fetch('https://zheoqm6dkz6tkuc4km4a4vj3om0sgrog.lambda-url.us-east-1.on.aws/', {
       method: 'post',
