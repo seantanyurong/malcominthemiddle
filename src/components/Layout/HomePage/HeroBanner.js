@@ -17,7 +17,8 @@ const HeroBanner = () => {
           data-aos-delay="150"
         >
           Struggling to find a convenient place to meet your friends? Why not
-          meet them in the middle.
+          meet them in the middle. Simply enter both of your zip codes and click
+          "Search".
         </p>
         {/* <div
           className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center"
