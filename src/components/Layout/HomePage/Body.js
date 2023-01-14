@@ -1,4 +1,35 @@
+// import fetch from 'node-fetch';
+
 const Body = () => {
+
+  async function getResults() {
+
+    const postal1 = 689672;
+    const postal2 = 750472;
+
+    const body = {postal1: postal1, postal2: postal2};
+
+    const response = await fetch('https://jmomnc7recyivbvpkxqnjkzmk40zmura.lambda-url.us-east-1.on.aws/', {
+      method: 'post',
+      body: JSON.stringify(body),
+    });
+
+
+    const data = await response.json();
+    
+    console.log(data)
+
+
+  }
+
+// cd ./package/tmp && zip -r ../lamdba.zip .
+
+  // cp -a ./lamdba/. ./package/tmp/
+
+  // cp -a ./lamdba/env/lib/python3.10/site-packages/. ./package/tmp/
+
+
+
   return (
     <div className="flex flex justify-center items-center mx-auto space-x-10">
       {/* First box */}
@@ -21,7 +52,7 @@ const Body = () => {
       </div>
       <div className="flex flex-col space-y-6 items-center">
         <progress className="progress w-24"></progress>
-        <button className="btn gap-2">
+        <button className="btn gap-2" onClick={getResults}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
